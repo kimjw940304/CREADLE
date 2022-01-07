@@ -21,6 +21,9 @@
     <!-- Detail (Modal) -->
     <Detail :detail_modal="detail_modal" @modal_close="detail_modal = 'close'"></Detail>
 
+    <!-- NewRecommend (Modal) -->
+    <NewRecommend :NewRecommend_modal="NewRecommend_modal" @modal_close="NewRecommend_modal = 'close'"></NewRecommend>
+
 
     <!-- main -->
     <div class="main_recommend">
@@ -100,6 +103,7 @@
 import TimelineCard from "./TimelineCard.vue";
 import Search from "./Search.vue";
 import Detail from "./Detail.vue";
+import NewRecommend from "./NewRecommend.vue";
 
 export default {
   data(){
@@ -110,7 +114,9 @@ export default {
     // search진행중에 따라 header 보여주는 데이터 
     now_search:"off",
     //detail Modal UI상태 데이터
-    detail_modal:"open"
+    detail_modal:"close",
+    //detail Modal UI상태 데이터
+    NewRecommend_modal:"close"
     }
 
   },//data end
@@ -133,6 +139,7 @@ export default {
     TimelineCard,
     Search,
     Detail,
+    NewRecommend,
   },// component end
 
 }
