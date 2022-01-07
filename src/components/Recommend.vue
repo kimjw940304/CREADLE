@@ -18,6 +18,9 @@
     <!-- 검색중 (Modal) -->
     <Search :now_search="now_search" @search_off="now_search = 'off'"></Search>
 
+    <!-- Detail (Modal) -->
+    <Detail :detail_modal="detail_modal" @modal_close="detail_modal = 'close'"></Detail>
+
 
     <!-- main -->
     <div class="main_recommend">
@@ -86,8 +89,9 @@
       <div class="timeline">
         <TimelineCard></TimelineCard>
       </div>
-
     </div>
+
+
   </div>
 </template>
 
@@ -95,6 +99,7 @@
 // component import
 import TimelineCard from "./TimelineCard.vue";
 import Search from "./Search.vue";
+import Detail from "./Detail.vue";
 
 export default {
   data(){
@@ -104,6 +109,8 @@ export default {
     newbtn:"",
     // search진행중에 따라 header 보여주는 데이터 
     now_search:"off",
+    //detail Modal UI상태 데이터
+    detail_modal:"open"
     }
 
   },//data end
@@ -125,6 +132,7 @@ export default {
   components: {
     TimelineCard,
     Search,
+    Detail,
   },// component end
 
 }
